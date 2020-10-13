@@ -4,6 +4,7 @@ import java.util.Comparator;
 /**
  * 미팅룸 예약시간 정렬
  * @author 박진영
+ * 2020-10-14
  */
 class Interval {
 
