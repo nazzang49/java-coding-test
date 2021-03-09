@@ -6,17 +6,17 @@ import java.util.Comparator;
  * @author 박진영
  * 2020-10-14
  */
-class Interval {
+class Period {
 
     int start;
     int end;
 
-    Interval() {
+    Period() {
         this.start = 0;
         this.end = 0;
     }
 
-    Interval(int s, int e) {
+    Period(int s, int e) {
         this.start = s;
         this.end = e;
     }
@@ -28,24 +28,24 @@ public class Q1_MeetingRoom {
         Q1_MeetingRoom meetingRoom = new Q1_MeetingRoom();
 
         /* 초기값 = 0 */
-        Interval interval1 = new Interval(15, 20);
-        Interval interval2 = new Interval(5, 10);
-        Interval interval3 = new Interval(0, 30);
+        Period interval1 = new Period(15, 20);
+        Period interval2 = new Period(5, 10);
+        Period interval3 = new Period(0, 30);
 
-        Interval[] intervals = {interval1, interval2, interval3};
+        Period[] intervals = {interval1, interval2, interval3};
         System.out.println(meetingRoom.solve(intervals));
     }
 
-    public boolean solve(Interval[] intervals) {
+    public boolean solve(Period[] intervals) {
         if (intervals == null) {
             return false;
         }
         print(intervals);
 
         /* sort by start */
-        Arrays.sort(intervals, new Comparator<Interval>() {
+        Arrays.sort(intervals, new Comparator<Period>() {
             @Override
-            public int compare(Interval o1, Interval o2) {
+            public int compare(Period o1, Period o2) {
                 // 오름차순
                 return o1.start - o2.start;
             }
@@ -62,9 +62,9 @@ public class Q1_MeetingRoom {
         return true;
     }
 
-    private void print(Interval[] intervals) {
+    private void print(Period[] intervals) {
         for (int i = 0; i < intervals.length; i++) {
-            Interval interval = intervals[i];
+            Period interval = intervals[i];
             System.out.println(interval.start + " - " + interval.end);
         }
     }
